@@ -7,7 +7,6 @@ services:
     ports:
       - "8501:8501"
     volumes:
-      - .:/app
-    environment:
-      - PYTHONUNBUFFERED=1
+      # Change the left side to a real path on your Portainer server
+      - /home/support/streamlit_apps:/app/pages
     restart: always
