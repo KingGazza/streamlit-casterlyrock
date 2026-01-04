@@ -1,0 +1,7 @@
+streamlit
+pandas
+duckdb
+# Add other libraries your app uses below, for example:
+# pandas
+# numpy
+# plotly
