@@ -1,25 +1,19 @@
-# Use a lightweight Python image
+# Use a standard Python image (pre-installed with common tools)
 FROM python:3.11-slim
 
-# Set the working directory inside the container
+# Set working directory
 WORKDIR /app
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    build-essential \
-    curl \
-    software-properties-common \
-    && rm -rf /var/lib/apt/lists/*
-
-# Copy requirements and install Python dependencies
+# Copy requirements and install
+# We use --user to avoid permission issues and skip the system updates
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy the rest of your app code
+# Copy the rest of your code
 COPY . .
 
-# Expose the port Streamlit runs on
+# Expose Streamlit port
 EXPOSE 8501
 
-# Command to run the app
+# Run the app
 ENTRYPOINT ["streamlit", "run", "app.py", "--server.port=8501", "--server.address=0.0.0.0"]
