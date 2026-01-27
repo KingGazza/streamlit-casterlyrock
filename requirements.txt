@@ -1,7 +1,7 @@
 streamlit
 pandas
 duckdb
-psycopg2
+psycopg2-binary
 datetime
 # Add other libraries your app uses below, for example:
 # pandas
