@@ -1,6 +1,8 @@
 streamlit
 pandas
 duckdb
+psycopg2
+datetime
 # Add other libraries your app uses below, for example:
 # pandas
 # numpy
